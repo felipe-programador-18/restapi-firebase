@@ -13,23 +13,25 @@ import axios from 'axios'
 const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
 
 function App() {
-const [data, setdate] = useState({})
 
+const [data, setdate] =useState({})
 //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
- useEffect(()=> {
-   axios
-   .get(Url)
-   .then(res => {
-     setdate(res.data)
-   })
 
- }, [])
+useEffect(() =>{
+  axios
+  .get(Url)
+  .then(res => {
+    setdate(res.data)
+  })
+
+}, [])
 
 
   return (
     <div>
-    <h1> My money practice more about axios and Api!!!</h1>
-    {JSON.stringify(data)}
+    <h1> My money practice more about axios and Api and remeber practice more always!!!</h1>
+     
+     {JSON.stringify(data)}
 
     </div>
 );
