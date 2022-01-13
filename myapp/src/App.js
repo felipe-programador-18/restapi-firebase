@@ -14,23 +14,21 @@ const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes
 
 function App() {
 
-const [data, setdate] =useState({})
+const [data, setdata] = useState({})
 //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
 
-useEffect(() =>{
-  axios
+useEffect(() => {
+   axios
   .get(Url)
   .then(res => {
-    setdate(res.data)
+     setdata(res.data)
   })
-
 }, [])
 
 
   return (
     <div>
     <h1> My money practice more about axios and Api and remeber practice more always!!!</h1>
-     
      {JSON.stringify(data)}
 
     </div>
