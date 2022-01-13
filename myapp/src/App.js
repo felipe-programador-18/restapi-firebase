@@ -24,7 +24,7 @@ const reducer = (state, action) => {
  if(action.type ==='SUCCESS'){
    return { 
      ...state ,
-     laoding: false ,
+     loading: false ,
      data: action.data
    }
  }
@@ -38,7 +38,7 @@ function App() {
 
 //flag reducer
 const [data, dispatch] = useReducer (reducer, {
-  laoding: true,
+  loading: true,
   data: {}
 })
 
@@ -60,7 +60,7 @@ useEffect(() => {
     <h1> My money practice more about axios and Api and remeber practice more always!!!</h1>
      {JSON.stringify(data)}
 
-     {data.laoding && <p>Loading...</p>}
+     {data.loading && <p>Loading...</p>}
     </div>
 );
 }
