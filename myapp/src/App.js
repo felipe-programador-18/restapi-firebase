@@ -1,6 +1,6 @@
-import React, {useEffect, useReducer} from 'react'
+import React  from 'react'
 import './App.css'
-import axios from 'axios'
+import UseGet from './useget'
 
 // the different among post and get, that post he create one key in firebase.
 //practice firebase of way firebase api
@@ -12,56 +12,18 @@ import axios from 'axios'
 
 const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
 
-const reducer = (state, action) => {
- // I go handling my state!!
- // how use reducer ?
- if(action.type === 'REQUEST'){
-    return {
-      ...state ,
-      laoding : true
-    }
- }
- if(action.type ==='SUCCESS'){
-   return { 
-     ...state ,
-     loading: false ,
-     data: action.data
-   }
- }
-
-  return state
-}
-
-//create hoock personalies
-const UseGet = Url => {
-   // try it flag loading
-   // i can seeing this data have conexitons
-   //flag reducer
-const [data, dispatch] = useReducer (reducer, {
-  loading: true,
-  data: {}
-})
-//remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
-useEffect(() => {
-  dispatch({type: 'REQUEST'})
-   axios
-  .get(Url)
-  .then(res => {
-    dispatch({type:'SUCCESS', data: res.data})
-  }) 
-}, [])
-   return data
-}
-
 function App() {
   const  data = UseGet (Url)
+  const data2 = UseGet ('http://bin.org/ip')
 
   return (
     <div>
     <h1> My money practice more about axios and Api and remeber practice more always!!!</h1>
      {JSON.stringify(data)}
-
      {data.loading && <p>Loading...</p>}
+     <br/>
+     <pre>{JSON.stringify(data2)}</pre>
+     
     </div>
 );
 }
