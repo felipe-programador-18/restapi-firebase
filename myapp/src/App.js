@@ -32,19 +32,17 @@ const reducer = (state, action) => {
   return state
 }
 
-function App() {
-// try it flag loading
-// i can seeing this data have conexitons
-
-//flag reducer
+//create hoock personalies
+const UseGet = Url => {
+   // try it flag loading
+   // i can seeing this data have conexitons
+   //flag reducer
 const [data, dispatch] = useReducer (reducer, {
   loading: true,
   data: {}
 })
-
 //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
 useEffect(() => {
-
   dispatch({type: 'REQUEST'})
    axios
   .get(Url)
@@ -52,9 +50,12 @@ useEffect(() => {
     dispatch({type:'SUCCESS', data: res.data})
   }) 
 }, [])
+   return data
+}
 
-
-
+function App() {
+  
+  const  data = UseGet (Url)
   return (
     <div>
     <h1> My money practice more about axios and Api and remeber practice more always!!!</h1>
