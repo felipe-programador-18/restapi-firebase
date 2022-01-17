@@ -54,8 +54,8 @@ useEffect(() => {
 }
 
 function App() {
-  
   const  data = UseGet (Url)
+
   return (
     <div>
     <h1> My money practice more about axios and Api and remeber practice more always!!!</h1>
