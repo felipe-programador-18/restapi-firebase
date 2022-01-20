@@ -7,6 +7,7 @@ const usePost = (Url) => {
         .then(res =>{
            console.log(res.data)
         })
+      
       }
 }
 
