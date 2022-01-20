@@ -1,8 +1,7 @@
 import React  from 'react'
 import './App.css'
 import UseGet from './useget'
-import usePost from './usePost'
-import axios from 'axios'
+import usePost from './usepost'
 
 // the different among post and get, that post he create one key in firebase.
 //practice firebase of way firebase api
@@ -17,10 +16,9 @@ const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes
 function App() {
   const  data = UseGet (Url)
  
-   
  //create one function to save post
- const Savepost = ()=> {
-  post({value:'10', descricao:'ola'})
+ const savePost = () => {
+  post({value:10, descricao:'ola'})
  }
 
   return (
@@ -31,7 +29,7 @@ function App() {
      <br/>
      
 
-     <button onClick={Savepost} >Salvar</button>
+     <button onClick={savePost} >Salvar</button>
      
     </div>
 );
