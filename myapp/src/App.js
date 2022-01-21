@@ -1,13 +1,17 @@
 import React  from 'react'
 import './App.css'
 import UseGet from './useget'
-import UsePost from './usePost'
+import UsePost from './UsePost'
 
 const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
 
 function App() {
   const  data = UseGet (Url)
-   
+
+const [postData, post] =  UsePost(Url)
+
+
+
   const Savenovo = () =>{
     post({ valor: 10 , descricao: 'olá'})
   }
@@ -20,6 +24,10 @@ function App() {
      <br/>
     
      <button onClick={Savenovo} >Salvar</button>
+
+     <pre>
+     {JSON.stringify(postData)}      
+     </pre>
      
     </div>
 );
