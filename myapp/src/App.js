@@ -1,21 +1,14 @@
 import React  from 'react'
 import './App.css'
 import UseGet from './useget'
-import usePost from './usepost'
-
-// the different among post and get, that post he create one key in firebase.
-//practice firebase of way firebase api
-//axios
-//.get('https://practice-more-api-default-rtdb.firebaseio.com/Felipe.json')
-//.then(res => {
- // console.log(res)
-//})
 
 const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
 
 function App() {
   const  data = UseGet (Url)
  
+
+// 
  //create one function to save post
  const savePost = () => {
   post({value:10, descricao:'ola'})
@@ -33,6 +26,6 @@ function App() {
      
     </div>
 );
-}
+  }
 
 export default App;
