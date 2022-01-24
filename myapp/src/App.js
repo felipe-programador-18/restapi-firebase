@@ -16,7 +16,7 @@ const [Deletdata, remove] = useDelete()
 
  const Doremove = () => {
   // i have delete way whole
-   remove('https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01/-MtyOd7zQgI5scC6bwIP.json')
+   remove('https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01/-MtyDNy1oTjERnI5lGLQ.json')
  }
 
   const Savenovo = () =>{
