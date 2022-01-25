@@ -1,13 +1,14 @@
 import React  from 'react'
 import './App.css'
 import useDelete from './useDelete'
-import UseGet from './useget'
+//import UseGet from './useget'
 import UsePost from './UsePost'
+import UseGet from './rest'
 
 const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
 
 function App() {
-  const  data = UseGet (Url)
+  const  data = UseGet ('movimentacoes/2022-01.json')
 
 const [postData, post] =  UsePost(Url)
 const [Deletdata, remove] = useDelete()
