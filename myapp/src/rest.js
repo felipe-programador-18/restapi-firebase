@@ -23,6 +23,7 @@ const reducer = (state, action) => {
      return state
    }
 
+   // here i am caught kind url to getting make rearrange
    const BaseUrl ="https://practice-more-api-default-rtdb.firebaseio.com"
 
    const UseGet = resource => {
@@ -44,3 +45,6 @@ const reducer = (state, action) => {
  }, [])
     return data
  }  
+
+
+ export default UseGet
