@@ -8,7 +8,7 @@ import UseGet from './rest'
 const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
 
 function App() {
-  const  data = UseGet ('movimentacoes/2022-01.json')
+  const  data = UseGet ('movimentacoes/2022-01')
 
 const [postData, post] =  UsePost(Url)
 const [Deletdata, remove] = useDelete()

@@ -24,7 +24,7 @@ const reducer = (state, action) => {
    }
 
    // here i am caught kind url to getting make rearrange
-   const BaseUrl ="https://practice-more-api-default-rtdb.firebaseio.com"
+   const BaseUrl ='https://practice-more-api-default-rtdb.firebaseio.com'
 
    const UseGet = resource => {
     // try it flag loading
