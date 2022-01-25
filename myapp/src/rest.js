@@ -30,10 +30,10 @@ const reducer = (state, action) => {
     // try it flag loading
     // i can seeing this data have conexitons
     //flag reducer
- const [data, dispatch] = useReducer (reducer, {
-   loading: true,
-   data: {}
- })
+    const [data, dispatch] = useReducer (reducer, {
+     loading: true,
+     data: {}
+     })
  //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
  useEffect(() => {
    dispatch({type: 'REQUEST'})
