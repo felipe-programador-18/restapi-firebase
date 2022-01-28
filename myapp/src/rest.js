@@ -35,16 +35,16 @@ const reducer = (state, action) => {
      data: {}
      })
  //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
- useEffect(() => {
-   dispatch({type: 'REQUEST'})
-    axios
-   .get(BaseUrl + resource + '.json')
-   .then(res => {
-     dispatch({type:'SUCCESS', data: res.data})
-   }) 
- }, [])
+    useEffect(() => {
+     dispatch({type: 'REQUEST'})
+     axios
+     .get(BaseUrl + resource + '.json')
+     .then(res => {
+       dispatch({type:'SUCCESS', data: res.data})
+     }) 
+    }, [])
     return data
- }  
+  }  
 
 
  export default UseGet
