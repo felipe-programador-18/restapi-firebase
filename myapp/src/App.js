@@ -3,12 +3,17 @@ import './App.css'
 import useDelete from './useDelete'
 //import UseGet from './useget'
 import UsePost from './UsePost'
-import UseGet from './rest'
 
-const Url = 'https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01.json'
+// THIS REST turned about init
+import REST from './rest'
+const BaseUrl ='https://build-api-8a54e-default-rtdb.firebaseio.com/'
+
+const {UseGet} = REST(BaseUrl)
+
+const Url = 'https://build-api-8a54e-default-rtdb.firebaseio.com/movimentacao/2022-01/despesa.json'
 
 function App() {
-  const  data = UseGet ('movimentacoes/2022-01')
+  const  data = UseGet ('movimentacao/2022-01')
 
 const [postData, post] =  UsePost(Url)
 const [Deletdata, remove] = useDelete()
@@ -17,7 +22,7 @@ const [Deletdata, remove] = useDelete()
 
  const Doremove = () => {
   // i have delete way whole
-   remove('https://practice-more-api-default-rtdb.firebaseio.com/movimentacoes/2022-01/-MtyDNy1oTjERnI5lGLQ.json')
+   remove('https://build-api-8a54e-default-rtdb.firebaseio.com/movimentacao/2022-01/despesa.json/-Muh4Yr2PlJiZWVmSNpi')
  }
 
   const Savenovo = () =>{
