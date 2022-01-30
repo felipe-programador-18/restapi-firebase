@@ -23,28 +23,35 @@ const reducer = (state, action) => {
      return state
    }
 
+
+   const init = BaseUrl => {
+
+    const UseGet = resource => {
+      // try it flag loading
+      // i can seeing this data have conexitons
+      //flag reducer
+      const [data, dispatch] = useReducer (reducer, {
+       loading: true,
+       data: {}
+       })
+   //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
+      useEffect(() => {
+       dispatch({type: 'REQUEST'})
+       axios
+       .get(BaseUrl + resource + '.json')
+       .then(res => {
+         dispatch({type:'SUCCESS', data: res.data})
+       }) 
+      }, [])
+      return data
+    }  
+    //here it is retunr useget that stay inside of function init!!
+    return {
+      UseGet
+    }
+   }
    // here i am caught kind url to getting make rearrange
-   const BaseUrl ='https://practice-more-api-default-rtdb.firebaseio.com'
-
-   const UseGet = resource => {
-    // try it flag loading
-    // i can seeing this data have conexitons
-    //flag reducer
-    const [data, dispatch] = useReducer (reducer, {
-     loading: true,
-     data: {}
-     })
- //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
-    useEffect(() => {
-     dispatch({type: 'REQUEST'})
-     axios
-     .get(BaseUrl + resource + '.json')
-     .then(res => {
-       dispatch({type:'SUCCESS', data: res.data})
-     }) 
-    }, [])
-    return data
-  }  
+ 
 
 
- export default UseGet
+ export default init
