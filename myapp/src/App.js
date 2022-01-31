@@ -27,11 +27,13 @@ const [Deletdata, remove] = useDelete()
 
   return (
     <div>
- 
+
     <nav className='navbar navbar-light bg-primary'>
-    <a className='navbar-brand '> My Money Api Rest</a>
+    <div className='container'>
+    <a className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
+
+    </div>
     </nav>
-    <h1>Project my monet, working firebase with restapi and React!!!</h1>
      {JSON.stringify(data)}
      {data.loading && <p>Loading...</p>}
      <br/>
