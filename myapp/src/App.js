@@ -49,6 +49,23 @@ function App() {
     <option value='03'>03</option>
     </select>
     <button> adding month</button>
+    
+    {
+      data.loading && <span>Carregando...</span>
+    }
+    
+    {
+      !data.loading &&
+      <table className='table'>
+      <tbody>
+           <tr>
+           <td>2019</td>
+           <td>01</td>  
+           </tr>    
+      </tbody>
+
+      </table>
+    }
 
 
     <pre>
