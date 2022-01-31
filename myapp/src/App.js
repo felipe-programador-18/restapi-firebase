@@ -31,9 +31,24 @@ const [Deletdata, remove] = useDelete()
     <nav className='navbar navbar-light bg-primary'>
     <div className='container'>
     <a className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
-
     </div>
     </nav>
+     
+   <h2>Adding month</h2>
+
+    <select>
+    <option value='2019'>2019</option>
+    <option value='2020'>2020</option>
+    <option value='2021'>2021</option>
+    </select>
+
+    <select>
+    <option value='01'>01</option>
+    <option value='02'>02</option>
+    <option value='03'>03</option>
+    </select>
+    <button> adding month</button>
+
      {JSON.stringify(data)}
      {data.loading && <p>Loading...</p>}
      <br/>
