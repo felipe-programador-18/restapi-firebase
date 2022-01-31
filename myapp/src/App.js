@@ -27,7 +27,11 @@ const [Deletdata, remove] = useDelete()
 
   return (
     <div>
-    <h1> My money practice more about axios and Api and remeber practice more always!!!</h1>
+ 
+    <nav className='navbar navbar-light bg-primary'>
+    <a className='navbar-brand '> My Money Api Rest</a>
+    </nav>
+    <h1>Project my monet, working firebase with restapi and React!!!</h1>
      {JSON.stringify(data)}
      {data.loading && <p>Loading...</p>}
      <br/>
