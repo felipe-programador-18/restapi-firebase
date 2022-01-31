@@ -28,13 +28,13 @@ function App() {
 
   return (
     <div>
-
+    
     <nav className='navbar navbar-light bg-primary'>
     <div className='container'>
     <a className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
     </div>
     </nav>
-     
+    <div className='container'>
    <h2>Adding month</h2>
 
     <select>
@@ -61,6 +61,9 @@ function App() {
       <tr>
       <th>MÊS</th>
       <th>PREVISÃO ENTRADA</th>
+      <th>PREVISÃO DE SAIDA</th>
+      <th>ENTRADA</th>
+      <th>SAIDA</th>
       </tr>
       </thead>
       
@@ -90,7 +93,7 @@ function App() {
     <pre>
     {JSON.stringify(data)}
     </pre>
-   
+   </div>
     </div>
 );
   }
