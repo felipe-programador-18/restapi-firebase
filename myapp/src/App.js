@@ -57,6 +57,13 @@ function App() {
     {
       !data.loading &&
       <table className='table'>
+      <thead>
+      <tr>
+      <th>MÊS</th>
+      <th>PREVISÃO ENTRADA</th>
+      </tr>
+      </thead>
+      
       <tbody>
            <tr>
            <td>2019</td>
