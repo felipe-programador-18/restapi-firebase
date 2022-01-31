@@ -64,11 +64,23 @@ function App() {
       </tr>
       </thead>
       
+       {
+         Object
+         .keys(data.data)
+         .map(mes => {
+           return (
+            <tr key={mes}>
+            <td> {mes} </td>
+            <td>{data.data[mes].previsao_entrada}</td> 
+            <td>{data.data[mes].previsao_saida}</td>  
+            <td>{data.data[mes].entrada}</td>  
+            <td>{data.data[mes].saida}</td>   
+            </tr> )
+         }
+          )
+       }
       <tbody>
-           <tr>
-           <td>2019</td>
-           <td>01</td>  
-           </tr>    
+            
       </tbody>
 
       </table>
