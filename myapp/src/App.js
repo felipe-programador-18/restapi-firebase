@@ -11,19 +11,19 @@ const {UseGet,UsePost, useDelete} = REST(BaseUrl)
 function App() {
   const  data = UseGet ('movimentacao/2022-01')
 
-const [postData, post] =  UsePost('movimentacao/2022-01')
-const [Deletdata, remove] = useDelete()
+//const [postData, post] =  UsePost('movimentacao/2022-01')
+//const [Deletdata, remove] = useDelete()
 // i have delete way whole
 
 
- const Doremove = () => {
+ //const Doremove = () => {
   // i have delete way whole
-   remove('movimentacao/2022-01/-MuhE8AHOBl46uBwFRHX')
- }
+   //remove('movimentacao/2022-01/-MuhE8AHOBl46uBwFRHX')
+// }
 
-  const Savenovo = () =>{
-    post({ valor: 10 , descricao: 'olá'})
-  }
+  //const Savenovo = () =>{
+    //post({ valor: 10 , descricao: 'olá'})
+ // }
 
   return (
     <div>
@@ -49,18 +49,7 @@ const [Deletdata, remove] = useDelete()
     </select>
     <button> adding month</button>
 
-     {JSON.stringify(data)}
-     {data.loading && <p>Loading...</p>}
-     <br/>
-    
-     <button onClick={Savenovo} >Salvar</button>
-
-     <pre>
-     {JSON.stringify(postData)}      
-     </pre>
-     
-     <button onClick={Doremove}>Delete</button>
-     {JSON.stringify(Deletdata)} 
+   
     </div>
 );
   }
