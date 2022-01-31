@@ -9,7 +9,8 @@ const {UseGet,UsePost, useDelete} = REST(BaseUrl)
 
 
 function App() {
-  const  data = UseGet ('movimentacao/2022-01')
+                  
+  const  data = UseGet ('meses')
 
 //const [postData, post] =  UsePost('movimentacao/2022-01')
 //const [Deletdata, remove] = useDelete()
@@ -49,6 +50,10 @@ function App() {
     </select>
     <button> adding month</button>
 
+
+    <pre>
+    {JSON.stringify(data)}
+    </pre>
    
     </div>
 );
