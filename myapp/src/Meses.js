@@ -9,6 +9,7 @@ const Month = () => {
     if(data.loading){
         return <span>Loading ...</span>
     } 
+    if(data.data){
     return (
             !data.loading &&
             <table className='table'>
@@ -42,8 +43,11 @@ const Month = () => {
             </table>
     
             )
+        
              }
-      
+            return null
+        }
+
       
               //<pre> {JSON.stringify(data)} </pre>
 
