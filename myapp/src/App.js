@@ -2,6 +2,7 @@ import React  from 'react'
 import './App.css'
 import Header from './elements/Header'
 import Month from './Meses'
+import AddingMo from './Adding.mon' 
 
 // THIS REST turned about init
 import REST from './rest'
@@ -31,22 +32,9 @@ function App() {
   return (
     <div>
     <Header/>
-    <div className='container'>
-   <h2>Adding month</h2>
-
-    <select>
-    <option value='2019'>2019</option>
-    <option value='2020'>2020</option>
-    <option value='2021'>2021</option>
-    </select>
-
-    <select>
-    <option value='01'>01</option>
-    <option value='02'>02</option>
-    <option value='03'>03</option>
-    </select>
-    <button> adding month</button>
-    
+    <div className='container'> 
+   
+    <AddingMo/>
     <Month/>
     
    </div>
