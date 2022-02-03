@@ -3,7 +3,7 @@ import React from "react"
 const AddingMo = () => {
 
  return (
-     <div>
+     <>
 <h2>Adding month</h2>
 
  <select>
@@ -18,7 +18,7 @@ const AddingMo = () => {
  <option value='03'>03</option>
  </select>
  <button> adding month</button>
- </div>
+ </>
  
 
  )
