@@ -8,7 +8,8 @@ const Month = () => {
     const  data = UseGet ('meses')
     if(data.loading){
         return <span>Loading ...</span>
-    } {
+    } 
+    return (
             !data.loading &&
             <table className='table'>
             <thead>
@@ -36,18 +37,15 @@ const Month = () => {
                }
                 )
              }
-            <tbody>
-                  
+            <tbody>   
             </tbody>
-      
             </table>
-          }
+    
+            )
+             }
       
       
-          <pre>
-          {JSON.stringify(data)}
-          </pre>
-}
+              //<pre> {JSON.stringify(data)} </pre>
 
 
 
