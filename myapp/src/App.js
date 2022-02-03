@@ -1,6 +1,7 @@
 import React  from 'react'
 import './App.css'
 import Header from './elements/Header'
+import Month from './Meses'
 
 // THIS REST turned about init
 import REST from './rest'
@@ -46,7 +47,8 @@ function App() {
     </select>
     <button> adding month</button>
     
-   
+    <Month/>
+    
    </div>
     </div>
 );
