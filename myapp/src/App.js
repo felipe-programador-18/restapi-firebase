@@ -1,5 +1,6 @@
 import React  from 'react'
 import './App.css'
+import Header from './elements/Header'
 
 // THIS REST turned about init
 import REST from './rest'
@@ -28,12 +29,7 @@ function App() {
 
   return (
     <div>
-    
-    <nav className='navbar navbar-light bg-primary'>
-    <div className='container'>
-    <a className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
-    </div>
-    </nav>
+    <Header/>
     <div className='container'>
    <h2>Adding month</h2>
 
