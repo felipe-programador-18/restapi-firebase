@@ -2,14 +2,14 @@ import React from "react";
 // THIS REST turned about init
 import REST from './rest'
 const BaseUrl ='https://build-api-8a54e-default-rtdb.firebaseio.com/'
-const {UseGet,UsePost, useDelete} = REST(BaseUrl)
+const {UseGet} = REST(BaseUrl)
 
 const Month = () => {
     const  data = UseGet ('meses')
     if(data.loading){
         return <span>Loading ...</span>
     } 
-    if(data.data){
+    if(Object.keys(data.data).length >0){
     return (
             !data.loading &&
             <table className='table'>
