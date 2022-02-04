@@ -1,5 +1,5 @@
 import React  from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router,Routes , Route} from 'react-router-dom'
 import './App.css' 
 import Header from './elements/Header'
 import Month from './Meses'
@@ -10,22 +10,31 @@ import AddingMo from './Adding.mon'
 //const BaseUrl ='https://build-api-8a54e-default-rtdb.firebaseio.com/'
 
 //const {UseGet,UsePost, useDelete} = REST(BaseUrl)
-
-
-function App() {
-                  
-  return (
-    <Router>
-    <div>
-    <Header/>
-    <div className='container'> 
+const Home =  () =>{
+  
+  return  <div className='container'> 
    
     <AddingMo/>
     <Month/>
     
    </div>
-    </div>
-    </Router>
+}
+
+const Together  = () =>{
+  return <h1><Header/></h1>
+}
+
+function App() {
+                  
+  return (
+    <Router>
+    <Routes>
+        <Header/>
+        <Route path='/elements/Header' exact element= {<Together/>} />
+        <Route path="/" exact element={<Home />} />
+         
+    </Routes>
+  </Router>
 );
   }
 
