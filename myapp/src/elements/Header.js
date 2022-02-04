@@ -5,12 +5,14 @@ import React from "react"
 
 const Header = () =>{
 
-  return(
-    <nav className='navbar navbar-light bg-primary'>
-       <div className='container'>
-         <a className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
+  return( 
+    
+      <nav className='navbar navbar-light bg-primary'>
+        <div className='container'>
+           <a className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
        </div>
-    </nav>
+      </nav>
+    
   )
 }
 
