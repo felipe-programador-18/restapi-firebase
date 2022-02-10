@@ -3,18 +3,18 @@ import React from "react"
 
 //this moment am build new element
 
-const Outro = () =>{
+const Header = () =>{
 
   return( 
-      <React.Fragment> 
+     <React.Fragment>
       <nav className='navbar navbar-light bg-primary'>
         <div className='container'>
-           <a className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
+           <a href="/" className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
        </div>
       </nav>
-      </React.Fragment>
+      </React.Fragment> 
   )
 }
 
 
-export default Outro
+export default Header
