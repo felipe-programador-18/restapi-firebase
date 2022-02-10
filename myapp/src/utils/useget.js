@@ -38,7 +38,7 @@ const reducer = (state, action) => {
      .then(res => {
        dispatch({type:'SUCCESS', data: res.data})
      }) 
-   }, [])
+   },[])
       return data
    }
 
