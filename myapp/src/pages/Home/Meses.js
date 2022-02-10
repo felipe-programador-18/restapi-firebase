@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from 'react-router-dom'
 
 // THIS REST turned about init
-import REST from '../../rest'
+import REST from '../../utils/rest'
 const BaseUrl ='https://build-api-8a54e-default-rtdb.firebaseio.com/'
 const {UseGet} = REST(BaseUrl)
 
