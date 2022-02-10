@@ -8,9 +8,9 @@ const Header = () =>{
   return( 
      <React.Fragment>
       <nav className='navbar navbar-light bg-primary'>
-        <div className='container'>
-           <a href="/" className='navbar-brand '> Project my money, working firebase with restapi and React!!!</a>
-       </div>
+        <div className="container">
+           <a href="/" className='navbar-brand '>  My money</a>
+      </div>
       </nav>
       </React.Fragment> 
   )
