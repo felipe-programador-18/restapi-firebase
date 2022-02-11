@@ -1,5 +1,5 @@
 import React  from 'react'
-import {BrowserRouter as Router,Routes , Route} from 'react-router-dom'
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 import './App.css' 
 import Header from './elements/Header'
 import Home from './pages/Home'
@@ -22,14 +22,15 @@ function App() {
                   
   return (
     <React.Fragment>
-    <Header/>
+   
     <Router>
-      <Routes>
-         <Route path="/" exact element={<Home />} />
-         <Route path='/together' exact element= {<Together />} />
-         <Route path ='/movimentacoes/:data' exact element= {<Movimentacoes/>} />
-     </Routes>
-  </Router>
+        <Header/>
+        <div>
+        <Route path="/" exact element={Home} />
+         <Route path='/together' exact element= {Together} />
+         <Route path ='/movimentacoes/:data' component= {Movimentacoes} />
+        </div>
+     </Router>
   </React.Fragment>
 );
   }
