@@ -4,6 +4,7 @@ import './App.css'
 import Header from './elements/Header'
 import AddingMo from '../../myapp/src/pages/Home/Adding.mon'
 import Month from './pages/Home/Meses'
+import Movimentacoes from './pages/Movimentacoes'
 
 // THIS REST turned about init
 //import REST from './rest'
@@ -19,9 +20,9 @@ const Home = () =>{
   )
 }
 
-const Movimentacoes = () =>{
-  return <h1> movimentacoes</h1>
-}
+//const Movimentacoes = () =>{
+  //return <h1> Movimentacões</h1>
+//}
 
 
 
