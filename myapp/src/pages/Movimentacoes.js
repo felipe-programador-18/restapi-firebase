@@ -8,40 +8,12 @@ const { UseGet } = REST(BaseUrl)
 
 
 // create new movimentacoes to adding in the another router!!
-const Movimentacoes = ({ match }) =>{
+const Movimentacoes = (props) =>{
     // now i going flag in the date
-    const data = UseGet(`movimentacoes/${match.params.data}`)
-
-    return  (
+     return  (
         <div>
         <h1>Movimentacoes</h1>
-        <pre> {JSON.stringify(data)} </pre>
-        <table  className="table" >
-        <thead>
-         <tr>
-         <th>Descrição</th>
-         <th>Valor</th>
-         </tr>
-
-        </thead>
-        <tbody>
-         {
-            Object
-            .keys(data.data)
-            .map(movimentacao => {
-                return (
-                    <tr>
-                      <td>{data.data[movimentacao].descricao}</td>
-                      <td>{data.data[movimentacao].valor}</td>
-                    </tr>
-                )
-            })
-       
-         }
-        </tbody>
-
-        </table>
-
+        <pre> {JSON.stringify(props)} </pre>
         </div>
         )
 }
