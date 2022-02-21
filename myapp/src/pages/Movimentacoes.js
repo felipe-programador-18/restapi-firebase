@@ -3,7 +3,7 @@ import REST from '../utils/rest'
 import { useState } from "react"
 
 const BaseUrl ='https://build-api-8a54e-default-rtdb.firebaseio.com/'
-const { UseGet } = REST(BaseUrl)
+const { UseGet, UsePost } = REST(BaseUrl)
 
 
 
@@ -11,6 +11,9 @@ const { UseGet } = REST(BaseUrl)
 // create new movimentacoes to adding in the another router!!
 const Movimentacoes = ({match}) =>{
     // now i going flag in the date
+    const data = UseGet( `movimentacoes/${ match.params.data}`)
+    const [postData, salvar] = UsePost(`movimentacoes/${ match.params.data}`) 
+   
 
     // controller form is name called to change formulating with HOOCK
     // here i 'm target  value of input in the state, because i have using hookc state!!
@@ -23,10 +26,17 @@ const Movimentacoes = ({match}) =>{
     }
 
     const OnchangeValor = evt => {
-       setvalor(parseFloat(evt.target.valor))
+       setvalor(parseFloat(evt.target.value))
+    }
+      
+    const saveMove  =  () => {
+     salvar ({
+      descricao,
+      valor
+     })
     }
     
-    const data = UseGet( `movimentacoes/${ match.params.data}`)
+ 
      return  (
         <div className='container'>
         <h1>Movimentacões</h1>
@@ -60,8 +70,8 @@ const Movimentacoes = ({match}) =>{
 
             <tr>
             
-            <td> <input type='text' value={descricao}  onChange={OnchangeDescricao} /> </td>
-            <td> <input type='text'value={valor} onChange={OnchangeValor} />  </td>
+            <td> <input type='text' value={descricao}  onChange={OnchangeDescricao} />  </td>
+            <td> <input type='text' value={valor} onChange={OnchangeValor} /> <button onClick={saveMove}>+ </button> </td>
             
             </tr>
 

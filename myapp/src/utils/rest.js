@@ -53,13 +53,11 @@ const reducer = (state, action) => {
     const UsePost = resource => {
       const [data, dispatch] = useReducer (reducer, INITIAL_STATE)
 
-      const post  = data => {
+      const post  = async(data) => {
        dispatch({type: 'REQUEST'})    
-      axios
-      .post(BaseUrl + resource + '.json', data)
-      .then(res => {
+      const res = await axios.post(BaseUrl + resource + '.json', data)
+       {
           dispatch({type:'SUCCESS', data: res.data})
-      })
       }
     return [data, post]
   }
