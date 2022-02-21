@@ -56,9 +56,8 @@ const reducer = (state, action) => {
       const post  = async(data) => {
        dispatch({type: 'REQUEST'})    
       const res = await axios.post(BaseUrl + resource + '.json', data)
-       {
+       
           dispatch({type:'SUCCESS', data: res.data})
-      }
     return [data, post]
   }
 
@@ -87,6 +86,6 @@ const reducer = (state, action) => {
    }
    // here i am caught kind url to getting make rearrange
  
-
+  
 
  export default init
