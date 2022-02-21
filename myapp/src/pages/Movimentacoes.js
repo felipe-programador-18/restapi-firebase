@@ -34,6 +34,8 @@ const Movimentacoes = ({match}) =>{
       descricao,
       valor
      })
+     setdescricao('')
+     setvalor(0.0)
     }
     
  
