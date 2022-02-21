@@ -8,7 +8,7 @@ const Header = () =>{
   return( 
      <React.Fragment>
       <nav className='navbar navbar-light bg-primary'>
-        <div className="container">
+        <div className="container bg-light">
            <Link  className='navbar-brand ' to='/'>  My money</Link>
       </div>
       </nav>
