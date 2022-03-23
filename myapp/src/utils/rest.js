@@ -75,17 +75,12 @@ const reducer = (state, action) => {
   return [data, remove]
 }
 
-
-
     //here it is retunr useget that stay inside of function init!!
     return {
       UseGet,
       UsePost,
       useDelete
     }
-   }
+   }}
    // here i am caught kind url to getting make rearrange
- 
-  
-
- export default init
+export default init
