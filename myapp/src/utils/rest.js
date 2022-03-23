@@ -34,20 +34,19 @@ const reducer = (state, action) => {
    const init = BaseUrl => {
 
     const UseGet = resource => {
-      // try it flag loading
-      // i can seeing this data have conexitons
-      //flag reducer
       const [data, dispatch] = useReducer (reducer,INITIAL_STATE)
-   //remember i have uses useEffect to caught in the api's because without inside out i dont getting caught
-      useEffect(() => {
-       dispatch({type: 'REQUEST'})
-       axios
+      const carregar = async () => {
+        dispatch({type: 'REQUEST'})
+        const res = await axios
        .get(BaseUrl + resource + '.json')
-       .then(res => {
-         dispatch({type:'SUCCESS', data: res.data})
-       }) 
-      }, [])
-      return data
+       dispatch({type:'SUCCESS', data: res.data})
+      }
+      useEffect(() => {
+        carregar()
+      }, [resource])
+      return {...data,
+        refetch: carregar
+      }
     }  
 
     const UsePost = resource => {
@@ -56,8 +55,10 @@ const reducer = (state, action) => {
       const post  = async(data) => {
        dispatch({type: 'REQUEST'})    
       const res = await axios.post(BaseUrl + resource + '.json', data)
-       
-          dispatch({type:'SUCCESS', data: res.data})
+      dispatch({
+         type:'SUCCESS',
+         data: res.data
+        })
     return [data, post]
   }
 

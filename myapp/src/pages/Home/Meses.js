@@ -7,7 +7,7 @@ const BaseUrl ='https://monthly-app-2d69d-default-rtdb.firebaseio.com/'
 const {UseGet} = REST(BaseUrl)
 
 const Month = () => {
-    const  data = UseGet ('meses')
+    const  data = UseGet('meses')
     if(data.loading){
         return <span>Loading ...</span>
     } 

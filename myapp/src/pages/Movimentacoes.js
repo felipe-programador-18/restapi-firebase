@@ -2,6 +2,7 @@ import React from "react"
 import REST from '../utils/rest'
 import { useState } from "react"
 
+// import date about month
 const BaseUrl ='https://build-api-8a54e-default-rtdb.firebaseio.com/'
 const { UseGet, UsePost } = REST(BaseUrl)
 
@@ -13,14 +14,11 @@ const Movimentacoes = ({match}) =>{
     // now i going flag in the date
     const data = UseGet( `movimentacoes/${ match.params.data}`)
     const [postData, salvar] = UsePost(`movimentacoes/${ match.params.data}`) 
-   
 
-    // controller form is name called to change formulating with HOOCK
-    // here i 'm target  value of input in the state, because i have using hookc state!!
     const [ descricao, setdescricao] = useState('')
     const [valor, setvalor] = useState(0.0)
     
-    // this function to get date of input that went create, thought about that !!!
+    
     const OnchangeDescricao = evt => {
       setdescricao(evt.target.value)
     }
@@ -29,13 +27,14 @@ const Movimentacoes = ({match}) =>{
        setvalor(parseFloat(evt.target.value))
     }
       
-    const saveMove  =  () => {
-     salvar ({
+    const saveMove  =  async() => {
+      await salvar ({
       descricao,
       valor
      })
      setdescricao('')
      setvalor(0.0)
+     data.refetch()
     }
     
  
@@ -73,7 +72,7 @@ const Movimentacoes = ({match}) =>{
             <tr>
             
             <td> <input type='text' value={descricao}  onChange={OnchangeDescricao} />  </td>
-            <td> <input type='text' value={valor} onChange={OnchangeValor} /> <button onClick={saveMove}>+ </button> </td>
+            <td> <input type='text' value={valor} onChange={OnchangeValor} /> <button onClick={saveMove}>+</button> </td>
             
             </tr>
 
