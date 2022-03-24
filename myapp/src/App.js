@@ -1,5 +1,5 @@
 import React  from 'react'
-import {BrowserRouter as Router,Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css' 
 import Header from './elements/Header'
 import AddingMo from '../../myapp/src/pages/Home/Adding.mon'
@@ -30,9 +30,9 @@ function App() {
                   
   return (
     <React.Fragment>
-   
+
     <Router>
-        <Header/>
+    <Header/>
         <Route path='/'  exact component={Home}/>
         <Route path='/movimentacoes/:data' exact component={Movimentacoes}   />
         

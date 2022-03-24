@@ -35,6 +35,7 @@ const reducer = (state, action) => {
 
     const UseGet = resource => {
       const [data, dispatch] = useReducer (reducer,INITIAL_STATE)
+      
       const carregar = async () => {
         dispatch({type: 'REQUEST'})
         const res = await axios
@@ -43,45 +44,45 @@ const reducer = (state, action) => {
       }
       useEffect(() => {
         carregar()
-      }, [resource])
-      return {...data,
+      }, [])
+      return {
+        ...data,
         refetch: carregar
       }
     }  
 
-    const UsePost = resource => {
+      const UsePost = resource => {
       const [data, dispatch] = useReducer (reducer, INITIAL_STATE)
 
       const post  = async(data) => {
        dispatch({type: 'REQUEST'})    
       const res = await axios.post(BaseUrl + resource + '.json', data)
-      dispatch({
+         dispatch({
          type:'SUCCESS',
          data: res.data
-        })
-    return [data, post]
-  }
+          })
+         return [data, post]
+        }
+       }
 
-  const useDelete = () => {
-    // remember here i can set reducer!!!
-    const [data, dispatch] = useReducer (reducer, INITIAL_STATE)
-    const remove  = resource => {
+
+     const useDelete = () => {
+        // remember here i can set reducer!!!
+      const [data, dispatch] = useReducer (reducer, INITIAL_STATE)
+     const remove  = async(resource) => {
      dispatch({type: 'REQUEST'})    
-    axios
-    .delete(BaseUrl + resource + '.json')
-    .then(() => {
-        dispatch({type:'SUCCESS'})
-    })
+      await axios.delete(BaseUrl + resource + '.json')
+    
+      dispatch({type:'SUCCESS'})
+     }
+      return [data, remove]
     }
-  return [data, remove]
-}
-
-    //here it is retunr useget that stay inside of function init!!
-    return {
+      return {
       UseGet,
       UsePost,
       useDelete
-    }
-   }}
-   // here i am caught kind url to getting make rearrange
+     }}
+
+
+// here i am caught kind url to getting make rearrange
 export default init
